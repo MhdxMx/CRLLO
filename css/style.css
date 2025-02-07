@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .logo1 {
+    width: 5%; /* Taille du logo */
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  /* Styles pour la barre de navigation */
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-left: auto;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #575757;
+  }
+  
+  /* Icône du menu hamburger (visible seulement sur mobile) */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+  }
+  
+  .menu-icon .bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  /* Section Accueil */
+.acceuil {
+    background-color: #f4f4f9; /* Couleur de fond douce */
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+    
+    font-family: 'Arial', sans-serif;
+}
+
+.acceuil h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.acceuil h2 {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.acceuil p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acceuil button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin: 30PX;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+.acceuil button:hover {
+    background-color: #575757;
+}
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-section ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f4a261;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links li a {
+    font-size: 1.2rem;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #f4a261;
+}
+
+.footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+
+
+
+  
+  /* Mobile first - par défaut, cacher les liens du menu sur mobile */
+  @media (max-width: 768px) {
+    .logo1 {
+      width: 15%; /* Augmenter la taille du logo sur mobile */
+    }
+  
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  
+    .navbar ul li a {
+      font-size: 1.2rem;
+    }
+  
+    /* Afficher l'icône hamburger uniquement sur mobile */
+    .menu-icon {
+      display: flex;
+    }
+  
+    /* Lorsque la classe 'open' est ajoutée à la navbar, afficher le menu */
+    .navbar.open ul {
+      display: flex;
+    }
+
+    .acceuil {
+        padding: 30px;
+    }
+
+    .acceuil h1 {
+        font-size: 1rem;
+    }
+
+    .acceuil h2 {
+        font-size: 0.7rem;
+    }
+
+    .acceuil p {
+        font-size: 0.5rem;
+    }
+
+    .acceuil button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+  }
+  

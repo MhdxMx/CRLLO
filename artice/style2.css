@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .logo1 {
+    width: 5%; /* Taille du logo */
+    height: auto;
+    border-radius: 50px;
+  }
+  
+  /* Styles pour la barre de navigation */
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-left: auto;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #575757;
+  }
+  
+  /* Icône du menu hamburger (visible seulement sur mobile) */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+  }
+  
+  .menu-icon .bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+
+/* Article */
+.full-article {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.full-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.full-article h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Author */
+.author {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* Content */
+.content {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content br {
+    margin-bottom: 20px;
+}
+
+/* Link - Back to Articles */
+.back-to-home {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.back-to-home:hover {
+    background-color: #575757;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .full-article {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .full-article h2 {
+        font-size: 24px;
+    }
+
+    .author {
+        font-size: 16px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    .back-to-home {
+        font-size: 16px;
+    }
+}
+
+
+
+  .footer {
+    background-color: #333;
+    color: white;
+    
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-section ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f4a261;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links li a {
+    font-size: 1.2rem;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #f4a261;
+}
+
+.footer-bottom {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+
+
+
+  
+  /* Mobile first - par défaut, cacher les liens du menu sur mobile */
+  @media (max-width: 768px) {
+    .logo1 {
+      width: 15%; /* Augmenter la taille du logo sur mobile */
+    }
+  
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  
+    .navbar ul li a {
+      font-size: 1.2rem;
+    }
+  
+    /* Afficher l'icône hamburger uniquement sur mobile */
+    .menu-icon {
+      display: flex;
+    }
+  
+    /* Lorsque la classe 'open' est ajoutée à la navbar, afficher le menu */
+    .navbar.open ul {
+      display: flex;
+    }
+
+    
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+  }
+  

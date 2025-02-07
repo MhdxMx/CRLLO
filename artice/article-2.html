@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal du Lycée</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .logo1 {
+            width: 8%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #006400; /* Vert du drapeau */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #f7c600; /* Jaune du drapeau */
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+        }
+
+        .menu-icon .bar {
+            width: 30px;
+            height: 5px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .logo1 {
+                width: 20%;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #006400; /* Vert du drapeau */
+                padding-top: 20px;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .navbar ul li a {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar.open ul {
+                display: flex;
+            }
+        }
+
+        /* Full Article Styles */
+        main {
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .full-article {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .full-article h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .full-article .author {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .full-article .content {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            font-size: 16px;
+            color: #006400;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #006400;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-home:hover {
+            background-color: #006400;
+            color: white;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0055A4; /* Bleu du drapeau */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f7c600; /* Jaune du drapeau */
+        }
+
+        .footer-bottom {
+            background-color: #006400; /* Vert du drapeau */
+            padding: 10px;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="../img/logo.jpg" alt="crllologo" class="logo1">
+            
+            <!-- Icône du menu hamburger visible sur mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <!-- Liste de liens du menu -->
+            <ul id="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="./article/presentation.html">Journal</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="full-article">
+            <h2>Les événements sportifs au lycée</h2>
+            <p class="author">Par: Gwenn</p>
+            <p class="content">
+                Le lycée a toujours été un lieu de rencontre et de compétition pour les étudiants passionnés de sport. Cette année, plusieurs événements ont marqué les esprits, notamment le tournoi inter-lycées de football et la journée olympique.
+                <br><br>
+                Le tournoi inter-lycées a réuni des équipes de plusieurs établissements voisins, et nos élèves ont brillé par leur esprit d'équipe et leur détermination. Les matchs étaient intenses et le lycée a fini à la troisième place, un résultat qui a été largement salué.
+                <br><br>
+                En parallèle, la journée olympique a permis aux élèves de découvrir différents sports grâce à des ateliers animés par des professeurs spécialisés. Ce fut un véritable succès, avec une forte participation et des sourires sur tous les visages.
+            </p>
+        </article>
+
+        <a href="./presentation.html" class="back-to-home">Retour aux articles</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:contact@crllo.com">contact@crllo.com</a></li>
+                    <li><a href="tel:+123456789">+123 456 789</a></li>
+                    <li><a href="#">Adresse du lycée</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>
+                    Ce site est géré par la coopérative CRLLO, dédiée à informer les élèves des actualités et événements du lycée.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 MhdX | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction pour gérer le menu mobile
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
