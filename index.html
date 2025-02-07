@@ -7,7 +7,6 @@
     <link rel="icon" href="./img/logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -22,16 +21,16 @@
             scroll-behavior: smooth;
         }
 
-        /* Header Styles */
+        
         .logo1 {
             width: 8%;
             height: auto;
             border-radius: 50%;
         }
 
-        /* Navbar Styles */
+        
         .navbar {
-            background-color: #006400; /* Vert du drapeau */
+            background-color: #006400; 
             overflow: hidden;
             display: flex;
             justify-content: space-between;
@@ -63,7 +62,7 @@
         }
 
         .navbar ul li a:hover {
-            background-color: #f7c600; /* Jaune du drapeau */
+            background-color: #f7c600; 
         }
 
         .menu-icon {
@@ -93,7 +92,7 @@
                 flex-direction: column;
                 width: 100%;
                 text-align: center;
-                background-color: #006400; /* Vert du drapeau */
+                background-color: #006400;
                 padding-top: 20px;
             }
 
@@ -115,17 +114,15 @@
             }
         }
 
-        /* Hero Section Styles */
-        /* Hero Section Styles */
-/* Hero Section Styles */
+        
 .acceuil {
     text-align: center;
     padding: 100px 20px;
     background: 
-        linear-gradient(135deg, rgba(0, 100, 0, 0.7), rgba(247, 198, 0, 0.7), rgba(0, 85, 164, 0.7)), /* Dégradé transparent */
-        url('./img/logo.jpg'); /* Remplace './img/background.jpg' par ton image */
-    background-size: cover; /* Pour que l'image couvre toute la section */
-    background-position: center; /* Pour centrer l'image */
+        linear-gradient(135deg, rgba(0, 100, 0, 0.7), rgba(247, 198, 0, 0.7), rgba(0, 85, 164, 0.7)), 
+        url('./img/logo.jpg'); 
+    background-size: cover; 
+    background-position: center; 
     color: white;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -152,7 +149,7 @@
         }
 
         .acceuil button {
-            background-color: #f7c600; /* Jaune du drapeau */
+            background-color: #f7c600; 
             color: white;
             border: none;
             padding: 14px 35px;
@@ -164,12 +161,12 @@
         }
 
         .acceuil button:hover {
-            background-color: #0055A4; /* Bleu du drapeau */
+            background-color: #0055A4; 
         }
 
-        /* Footer Styles */
+        
         .footer {
-            background-color: #0055A4; /* Bleu du drapeau */
+            background-color: #0055A4; 
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -208,11 +205,11 @@
         }
 
         .footer-section a:hover {
-            color: #f7c600; /* Jaune du drapeau */
+            color: #f7c600; 
         }
 
         .footer-bottom {
-            background-color: #006400; /* Vert du drapeau */
+            background-color: #006400;
             padding: 10px;
         }
 
@@ -220,7 +217,7 @@
             font-size: 14px;
         }
 
-        /* Animations */
+    
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -234,14 +231,14 @@
         <nav class="navbar">
             <img src="./img/logo.jpg" alt="crllologo" class="logo1">
             
-            <!-- Icône du menu hamburger visible sur mobile -->
+           
             <div class="menu-icon" onclick="toggleMenu()">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
     
-            <!-- Liste de liens du menu -->
+         
             <ul id="nav-links">
                 <li><a href="#">Accueil</a></li>
                 <li><a href="./artice/presentation.html">Journal</a></li>
@@ -297,7 +294,7 @@
     </footer>
 
     <script>
-        // Fonction pour gérer le menu mobile
+        
         function toggleMenu() {
             const navbar = document.querySelector('.navbar');
             navbar.classList.toggle('open');
