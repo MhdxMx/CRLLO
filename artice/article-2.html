@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal du Lycée</title>
     <style>
-        /* Global Styles */
+       
         * {
             margin: 0;
             padding: 0;
@@ -20,16 +20,15 @@
             scroll-behavior: smooth;
         }
 
-        /* Header Styles */
+
         .logo1 {
             width: 8%;
             height: auto;
             border-radius: 50%;
         }
 
-        /* Navbar Styles */
         .navbar {
-            background-color: #006400; /* Vert du drapeau */
+            background-color: #006400; 
             overflow: hidden;
             display: flex;
             justify-content: space-between;
@@ -61,7 +60,7 @@
         }
 
         .navbar ul li a:hover {
-            background-color: #f7c600; /* Jaune du drapeau */
+            background-color: #f7c600; 
         }
 
         .menu-icon {
@@ -91,7 +90,7 @@
                 flex-direction: column;
                 width: 100%;
                 text-align: center;
-                background-color: #006400; /* Vert du drapeau */
+                background-color: #006400; 
                 padding-top: 20px;
             }
 
@@ -113,7 +112,7 @@
             }
         }
 
-        /* Full Article Styles */
+        
         main {
             padding: 40px 20px;
             background-color: #ffffff;
@@ -161,9 +160,9 @@
             color: white;
         }
 
-        /* Footer Styles */
+       
         .footer {
-            background-color: #0055A4; /* Bleu du drapeau */
+            background-color: #0055A4; 
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -202,11 +201,11 @@
         }
 
         .footer-section a:hover {
-            color: #f7c600; /* Jaune du drapeau */
+            color: #f7c600; 
         }
 
         .footer-bottom {
-            background-color: #006400; /* Vert du drapeau */
+            background-color: #006400; 
             padding: 10px;
         }
 
@@ -214,7 +213,7 @@
             font-size: 14px;
         }
 
-        /* Animations */
+        
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -228,14 +227,14 @@
         <nav class="navbar">
             <img src="../img/logo.jpg" alt="crllologo" class="logo1">
             
-            <!-- Icône du menu hamburger visible sur mobile -->
+           
             <div class="menu-icon" onclick="toggleMenu()">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
     
-            <!-- Liste de liens du menu -->
+
             <ul id="nav-links">
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="./article/presentation.html">Journal</a></li>
@@ -295,7 +294,7 @@
     </footer>
 
     <script>
-        // Fonction pour gérer le menu mobile
+       
         function toggleMenu() {
             const navbar = document.querySelector('.navbar');
             navbar.classList.toggle('open');
