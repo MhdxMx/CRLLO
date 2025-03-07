@@ -1,1 +1,332 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal du Lycée</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        .logo1 {
+            width: 8%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #006400; /* Vert du drapeau */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #f7c600; /* Jaune du drapeau */
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+        }
+
+        .menu-icon .bar {
+            width: 30px;
+            height: 5px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .logo1 {
+                width: 20%;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background-color: #006400; /* Vert du drapeau */
+                padding-top: 20px;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .navbar ul li a {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar.open ul {
+                display: flex;
+            }
+        }
+
+        /* Full Article Styles */
+        main {
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .full-article {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .full-article h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .full-article .author {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .full-article .content {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            font-size: 16px;
+            color: #006400;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #006400;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-home:hover {
+            background-color: #006400;
+            color: white;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0055A4; /* Bleu du drapeau */
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+        }
+
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f7c600; /* Jaune du drapeau */
+        }
+
+        .footer-bottom {
+            background-color: #006400; /* Vert du drapeau */
+            padding: 10px;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="../img/logo.jpg" alt="crllologo" class="logo1">
+            
+            <!-- Icône du menu hamburger visible sur mobile -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+    
+            <!-- Liste de liens du menu -->
+            <ul id="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../artice/presentation.html">Journal</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="full-article">
+            <h2 class="article-title">Résumé des matchs des 5 et 6 mars 2025.
+</h2>
+            <p class="author">Par: Richie</p>
+            <p class="content">
+            
+
+Les 5 et 6 mars 2025 ont été marqués par des rencontres palpitantes dans le cadre des compétitions scolaires. Voici les résultats des matchs :
+<br><br>
+Matchs du 5 mars
+<br><br>
+ 3ème A,B vs 4ème A,B
+Dans une rencontre dominée par les 3ème A,B, le score final s'est élevé à *7-0* en leur faveur. Les joueurs ont montré une grande cohésion et une maîtrise technique impressionnante, laissant peu de chances à leurs adversaires.
+<br><br>
+Terminales vs 5ème A,B
+Les terminales ont également brillé lors de leur match contre les 5ème A,B, remportant la rencontre sur un score de *2-1*. Malgré une résistance de la part des plus jeunes, les terminales ont su faire la différence grâce à des actions bien orchestrées.
+<br><br>
+ Matchs du 6 mars
+<br><br>
+3ème C,D vs 6ème C,D
+Le 6 mars, les 3ème C,D ont continué sur leur lancée avec une victoire écrasante de *5-1* contre les 6ème C,D. Cette performance a consolidé leur position dans le tournoi et a mis en évidence leur potentiel.
+<br><br>
+ 2ndes vs 4ème C,D
+Dans un match serré, les 2ndes ont triomphé des 4ème C,D avec un score de *3-2*. Ce match a été marqué par des échanges intenses et une ambiance électrique, témoignant de l'engagement des deux équipes.
+<br><br>
+Malheureusement, ces journées de compétition n'ont pas été exemptes d'incidents. *BOUKARI Nelly*, un élève de l'équipe des 2ndes, a subi une grave blessure en se fracturant le genou. Il a été immédiatement transporté à l'hôpital pour des soins. Les pensées de toute l'équipe et des supporters vont vers lui pour un prompt rétablissement.
+<br><br>
+ Conclusion
+Ces deux jours de matchs ont offert un spectacle riche en émotions, avec des performances impressionnantes et des moments de tension. La compétition continue, et tous les regards sont désormais tournés vers les prochaines rencontres.
+<br><br>
+            </p>
+                <img src="../img/article6.jpg" alt="emplois du temps" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px;">
+
+        </article>
+
+        <a href="./presentation.html" class="back-to-home">Retour aux articles</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:contact@crllo.com">contact@crllo.com</a></li>
+                    <li><a href="tel:+123456789">+123 456 789</a></li>
+                    <li><a href="#">Adresse du lycée</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>
+                    Ce site est géré par la coopérative CRLLO, dédiée à informer les élèves des actualités et événements du lycée.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 MhdX | Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction pour gérer le menu mobile
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('open');
+        }
+    </script>
+
+
+
+</body>
+</html>
